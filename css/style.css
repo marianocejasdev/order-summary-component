@@ -1,0 +1,197 @@
+@font-face {
+    font-family: "Red Hat Display";
+    src: url('../assets/fonts/red-hat-display.woff') format('woff'),
+        url('../assets/fonts/red-hat-display.ttf') format('truetype');
+    font-display: swap;
+}
+
+/* VARIABLES */
+:root {
+    --color-background: #E0E8FF;
+    --color-white: #FFF;
+    --color-dark-blue: #1F2E55;
+    --color-light-gray: #717FA6;
+    --color-light-blue: #F7F9FF;
+    --color-vibrant-blue: #382AE1;
+    --color-hover-blue: #766CF1;
+    --color-shadow: rgba(13, 48, 189, 0.15);
+    --border-radius: 11px;
+    --font: "Red Hat Display";
+}
+
+/* RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    background-image: url('../assets/images/pattern-background-mobile.webp');
+    background-color: var(--color-background);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    min-height: 100svh;
+    display: grid;
+    place-content: center;
+}
+
+.order-summary {
+    width: 327px;
+    height: 567px;
+    border-radius: 20px;
+    background: var(--color-white);
+    box-shadow: 0px 40px 40px -20px var(--color-shadow);
+    overflow: hidden;
+    text-align: center;
+}
+
+.order-summary__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+}
+
+.order-summary__text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.order-summary__title {
+    color: var(--color-dark-blue);
+    text-align: center;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.order-summary__description {
+    color: var(--color-light-gray);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+.order-summary__plan {
+    border-radius: var(--border-radius);
+    background: var(--color-light-blue);
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    justify-content: space-between;
+}
+
+.order-summary__image-texts {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+}
+
+.order-summary__plan-title {
+    color: var(--color-dark-blue);
+    font-size: 14px;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.order-summary__plan-price {
+    color: var(--color-light-gray);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.order-summary__link {
+    color: var(--color-vibrant-blue);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.order-summary__link:hover {
+    color: var(--color-hover-blue);
+}
+
+.order-summary__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 9px;
+}
+
+.order-summary__button {
+    padding-block: 15px;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: normal;
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.order-summary__button--proceed {
+    color: white;
+    background-color: var(--color-vibrant-blue);
+    box-shadow: 0px 20px 20px 0px rgba(56, 42, 225, 0.19);
+}
+
+.order-summary__button--proceed:hover {
+    background-color: var(--color-hover-blue);
+}
+
+.order-summary__button--cancel {
+    color: var(--color-light-gray);
+    background-color: transparent;
+}
+
+/* DESKTOP */
+
+@media (min-width: 1024px) {
+    .container {
+        background-image: url('../assets/images/pattern-background-desktop.webp');
+    }
+
+    .order-summary {
+        width: 450px;
+        height: auto;
+    }
+
+    .order-summary__content {
+        gap: 32px;
+        padding: 45px 48px 28px;
+    }
+
+    .order-summary__title {
+        font-size: 28px;
+    }
+
+    .order-summary__description,
+    .order-summary__plan-title,
+    .order-summary__plan-price {
+        font-size: 16px;
+    }
+
+    .order-summary__link {
+        font-size: 14px;
+    }
+
+    .order-summary__button {
+        font-size: 15px;
+    }
+}
